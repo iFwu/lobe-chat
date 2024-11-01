@@ -28,57 +28,37 @@ interface HeaderProps extends Pick<DrawerProps, 'getContainer'> {
   title: ReactNode;
 }
 
-const Header = memo<HeaderProps>(({ children, getContainer, title }) => {
+const Header = memo<HeaderProps>(({ children, getContainer }) => {
   const [open, setOpen] = useState(false);
-  const { styles, theme } = useStyles();
+  const { theme } = useStyles();
 
   return (
-    <>
-      <ChatHeader
-        className={styles.container}
-        left={
-          <ChatHeaderTitle
-            title={
-              <Flexbox align={'center'} className={styles.title} gap={4} horizontal>
-                <ActionIcon
-                  color={theme.colorText}
-                  icon={Menu}
-                  onClick={() => setOpen(true)}
-                  size={{ blockSize: 32, fontSize: 18 }}
-                />
-                {title}
-              </Flexbox>
-            }
-          />
-        }
-      />
-      <Drawer
-        bodyStyle={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 20,
-          justifyContent: 'space-between',
-          padding: 16,
-        }}
-        getContainer={getContainer}
-        headerStyle={{ display: 'none' }}
-        maskStyle={{ background: 'transparent' }}
-        onClick={() => setOpen(false)}
-        onClose={() => setOpen(false)}
-        open={open}
-        placement={'left'}
-        rootStyle={{ position: 'absolute' }}
-        style={{
-          background: theme.colorBgContainer,
-          borderRight: `1px solid ${theme.colorSplit}`,
-        }}
-        width={260}
-        zIndex={10}
-      >
-        {children}
-        <BrandWatermark paddingInline={12} />
-      </Drawer>
-    </>
+    <Drawer
+      bodyStyle={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 20,
+        justifyContent: 'space-between',
+        padding: 16,
+      }}
+      getContainer={getContainer}
+      headerStyle={{ display: 'none' }}
+      maskStyle={{ background: 'transparent' }}
+      onClick={() => setOpen(false)}
+      onClose={() => setOpen(false)}
+      open={open}
+      placement={'left'}
+      rootStyle={{ position: 'absolute' }}
+      style={{
+        background: theme.colorBgContainer,
+        borderRight: `1px solid ${theme.colorSplit}`,
+      }}
+      width={260}
+      zIndex={10}
+    >
+      {children}
+      <BrandWatermark paddingInline={12} />
+    </Drawer>
   );
 });
 

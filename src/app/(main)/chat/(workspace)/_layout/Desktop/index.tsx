@@ -1,7 +1,6 @@
 import { Flexbox } from 'react-layout-kit';
 
 import { LayoutProps } from '../type';
-import ChatHeader from './ChatHeader';
 import HotKeys from './HotKeys';
 import Portal from './Portal';
 import TopicPanel from './TopicPanel';
@@ -9,7 +8,6 @@ import TopicPanel from './TopicPanel';
 const Layout = ({ children, topic, conversation, portal }: LayoutProps) => {
   return (
     <>
-      <ChatHeader />
       <Flexbox
         height={'100%'}
         horizontal

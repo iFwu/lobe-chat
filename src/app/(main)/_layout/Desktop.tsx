@@ -10,7 +10,7 @@ import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfi
 
 import { LayoutProps } from './type';
 
-const Layout = memo<LayoutProps>(({ children, nav }) => {
+const Layout = memo<LayoutProps>(({ children /* , nav */ }) => {
   const { isPWA } = usePlatform();
   const theme = useTheme();
 
@@ -28,7 +28,7 @@ const Layout = memo<LayoutProps>(({ children, nav }) => {
         }}
         width={'100%'}
       >
-        {nav}
+        {/* {nav} */}
         {children}
       </Flexbox>
     </>

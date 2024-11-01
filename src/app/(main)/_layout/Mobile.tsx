@@ -20,7 +20,7 @@ const MOBILE_NAV_ROUTES = new Set([
   '/me',
 ]);
 
-const Layout = memo(({ children, nav }: LayoutProps) => {
+const Layout = memo(({ children /* , nav */ }: LayoutProps) => {
   const { showMobileWorkspace } = useQuery();
   const pathname = usePathname();
   const { url } = qs.parseUrl(pathname);
@@ -32,7 +32,7 @@ const Layout = memo(({ children, nav }: LayoutProps) => {
     <>
       {showCloudPromotion && <CloudBanner mobile />}
       {children}
-      {showNav && nav}
+      {/* {showNav && nav} */}
     </>
   );
 });

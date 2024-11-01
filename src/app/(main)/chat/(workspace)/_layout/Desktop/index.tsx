@@ -4,7 +4,7 @@ import { LayoutProps } from '../type';
 import ChatHeader from './ChatHeader';
 import HotKeys from './HotKeys';
 import Portal from './Portal';
-import TopicPanel from './TopicPanel';
+// import TopicPanel from './TopicPanel';
 
 const Layout = ({ children, topic, conversation, portal }: LayoutProps) => {
   return (
@@ -25,7 +25,7 @@ const Layout = ({ children, topic, conversation, portal }: LayoutProps) => {
         </Flexbox>
         {children}
         <Portal>{portal}</Portal>
-        <TopicPanel>{topic}</TopicPanel>
+        {/* <TopicPanel>{topic}</TopicPanel> */}
       </Flexbox>
       <HotKeys />
     </>

@@ -35,8 +35,8 @@ const Main = memo(() => {
 
   // const openChatSettings = useOpenChatSettings();
 
-  const displayTitle = isInbox ? t('inbox.title') : title;
-  const displayDesc = isInbox ? t('inbox.desc') : description;
+  const displayTitle = isInbox ? '' : title;
+  const displayDesc = isInbox ? '' : description;
   const showSessionPanel = useGlobalStore(systemStatusSelectors.showSessionPanel);
   const updateSystemStatus = useGlobalStore((s) => s.updateSystemStatus);
 

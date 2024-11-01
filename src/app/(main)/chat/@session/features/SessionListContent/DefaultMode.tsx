@@ -6,7 +6,7 @@ import { sessionSelectors } from '@/store/session/selectors';
 import { useUserStore } from '@/store/user';
 import { authSelectors } from '@/store/user/selectors';
 
-import Inbox from './Inbox';
+// import Inbox from './Inbox';
 import SessionList from './List';
 
 const DefaultMode = memo(() => {
@@ -18,7 +18,7 @@ const DefaultMode = memo(() => {
 
   return (
     <>
-      <Inbox />
+      {/* <Inbox /> */}
       <SessionList dataSource={defaultSessions || []} />
     </>
   );

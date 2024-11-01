@@ -30,7 +30,7 @@ const ChatHeaderTitle = memo(() => {
     <MobileNavBarTitle
       desc={
         <Flexbox align={'center'} gap={4} horizontal onClick={() => toggleConfig()}>
-          <span>{topic?.title || t('topic.title')}</span>
+          {/* <span>{topic?.title || t('topic.title')}</span>
           <ActionIcon
             active
             icon={ChevronDown}
@@ -39,7 +39,7 @@ const ChatHeaderTitle = memo(() => {
               background: theme.colorFillSecondary,
               color: theme.colorTextDescription,
             }}
-          />
+          /> */}
         </Flexbox>
       }
       title={

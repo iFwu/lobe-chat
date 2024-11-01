@@ -8,11 +8,13 @@ const sessionGroupKeys = (s: GlobalStore): string[] =>
 const showSystemRole = (s: GlobalStore) => s.status.showSystemRole;
 const mobileShowTopic = (s: GlobalStore) => s.status.mobileShowTopic;
 const mobileShowPortal = (s: GlobalStore) => s.status.mobileShowPortal;
+// const showChatSideBar = (s: GlobalStore) => !s.status.zenMode && s.status.showChatSideBar;
 const showChatSideBar = () => false;
 const showSessionPanel = (s: GlobalStore) => !s.status.zenMode && s.status.showSessionPanel;
 const showFilePanel = (s: GlobalStore) => s.status.showFilePanel;
 const hidePWAInstaller = (s: GlobalStore) => s.status.hidePWAInstaller;
 
+// const showChatHeader = (s: GlobalStore) => !s.status.zenMode;
 const showChatHeader = () => false;
 const inZenMode = (s: GlobalStore) => s.status.zenMode;
 const sessionWidth = (s: GlobalStore) => s.status.sessionsWidth;

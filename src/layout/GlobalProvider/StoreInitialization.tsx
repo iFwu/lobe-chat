@@ -14,6 +14,7 @@ import { useServerConfigStore } from '@/store/serverConfig';
 import { serverConfigSelectors } from '@/store/serverConfig/selectors';
 import { useUserStore } from '@/store/user';
 import { authSelectors } from '@/store/user/selectors';
+import { initializeDefaultAgents } from '@/app/init';
 
 const StoreInitialization = memo(() => {
   // prefetch error ns to avoid don't show error content correctly
@@ -89,6 +90,13 @@ const StoreInitialization = memo(() => {
       router.prefetch('/settings/modal');
     }
   }, [router, mobile]);
+
+  // 在用户状态初始化完成后，导入默认助手
+  useEffect(() => {
+    if (isUserStateInit) {
+      initializeDefaultAgents();
+    }
+  }, [isUserStateInit]);
 
   return null;
 });

@@ -70,16 +70,6 @@ const currentUserFiles = (s: ChatStoreState) => {
 
 const initTime = Date.now();
 
-const showInboxWelcome = (s: ChatStoreState): boolean => {
-  const isInbox = s.activeId === INBOX_SESSION_ID;
-  if (!isInbox) return false;
-
-  const data = currentChats(s);
-  const isBrandNewChat = data.length === 0;
-
-  return isBrandNewChat;
-};
-
 // Custom message for new assistant initialization
 const currentChatsWithGuideMessage =
   (meta: MetaData) =>
@@ -213,5 +203,4 @@ export const chatSelectors = {
   isSendButtonDisabledByMessage,
   isToolCallStreaming,
   latestMessage,
-  showInboxWelcome,
 };

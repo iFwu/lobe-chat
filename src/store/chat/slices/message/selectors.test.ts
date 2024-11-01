@@ -313,34 +313,6 @@ describe('chatSelectors', () => {
     });
   });
 
-  describe('showInboxWelcome', () => {
-    it('should return false if the active session is not the inbox session', () => {
-      const state = merge(initialStore, { activeId: 'someActiveId' });
-      const result = chatSelectors.showInboxWelcome(state);
-      expect(result).toBe(false);
-    });
-
-    it('should return false if there are existing messages in the inbox session', () => {
-      const state = merge(initialStore, {
-        activeId: INBOX_SESSION_ID,
-        messagesMap: {
-          [messageMapKey('inbox')]: mockMessages,
-        },
-      });
-      const result = chatSelectors.showInboxWelcome(state);
-      expect(result).toBe(false);
-    });
-
-    it('should return true if the active session is the inbox session and there are no existing messages', () => {
-      const state = merge(initialStore, {
-        activeId: INBOX_SESSION_ID,
-        messages: [],
-      });
-      const result = chatSelectors.showInboxWelcome(state);
-      expect(result).toBe(true);
-    });
-  });
-
   describe('currentToolMessages', () => {
     it('should return only tool messages', () => {
       const messages = [

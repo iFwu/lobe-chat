@@ -13,7 +13,6 @@ import { SessionDefaultGroup } from '@/types/session';
 
 import Actions from '../SessionListContent/CollapseGroup/Actions';
 import CollapseGroup from './CollapseGroup';
-import Inbox from './Inbox';
 import SessionList from './List';
 import ConfigGroupModal from './Modals/ConfigGroupModal';
 import RenameGroupModal from './Modals/RenameGroupModal';
@@ -64,8 +63,8 @@ const DefaultMode = memo(() => {
           key: id,
           label: name,
         })),
-        {
-          children: <SessionList dataSource={defaultSessions || []} />,
+        defaultSessions?.length > 0 && {
+          children: <SessionList dataSource={defaultSessions} />,
           extra: <Actions openConfigModal={() => setConfigGroupModalOpen(true)} />,
           key: SessionDefaultGroup.Default,
           label: t('defaultList'),
@@ -76,7 +75,6 @@ const DefaultMode = memo(() => {
 
   return (
     <>
-      <Inbox />
       <CollapseGroup
         activeKey={sessionGroupKeys}
         items={items}

@@ -31,10 +31,6 @@
   "duplicateTitle": "{{title}} Copy",
   "emptyAgent": "No assistant available",
   "historyRange": "History Range",
-  "inbox": {
-    "desc": "Activate the brain cluster and spark creative thinking. Your virtual assistant is here to communicate with you about everything.",
-    "title": "Just Chat"
-  },
   "input": {
     "addAi": "Add an AI message",
     "addUser": "Add a user message",

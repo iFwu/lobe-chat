@@ -30,7 +30,7 @@ const TopicPanel = memo(({ children }: PropsWithChildren) => {
   const { styles } = useStyles();
   const { md = true, lg = true } = useResponsive();
   const [showTopic, toggleConfig] = useGlobalStore((s) => [
-    systemStatusSelectors.showChatSideBar(s),
+    systemStatusSelectors.showChatSideBar(),
     s.toggleChatSideBar,
   ]);
   const showPortal = useChatStore(chatPortalSelectors.showPortal);

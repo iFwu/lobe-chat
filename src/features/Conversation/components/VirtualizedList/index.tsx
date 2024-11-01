@@ -8,7 +8,6 @@ import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
-import { WELCOME_GUIDE_CHAT_ID } from '@/const/session';
 import { isServerMode } from '@/const/version';
 import { useChatStore } from '@/store/chat';
 import { chatSelectors } from '@/store/chat/selectors';
@@ -16,7 +15,6 @@ import { useSessionStore } from '@/store/session';
 
 import AutoScroll from '../AutoScroll';
 import Item from '../ChatItem';
-import InboxWelcome from '../InboxWelcome';
 import SkeletonList from '../SkeletonList';
 
 interface VirtualizedListProps {
@@ -42,10 +40,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
   useFetchMessages(sessionId, activeTopicId);
 
   const data = useChatStore((s) => {
-    const showInboxWelcome = chatSelectors.showInboxWelcome(s);
-    return showInboxWelcome
-      ? [WELCOME_GUIDE_CHAT_ID]
-      : chatSelectors.currentChatIDsWithGuideMessage(s);
+    return chatSelectors.currentChatIDsWithGuideMessage(s);
   }, isEqual);
 
   useEffect(() => {
@@ -68,8 +63,6 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
 
   const itemContent = useCallback(
     (index: number, id: string) => {
-      if (id === WELCOME_GUIDE_CHAT_ID) return <InboxWelcome />;
-
       return <Item id={id} index={index} />;
     },
     [mobile],

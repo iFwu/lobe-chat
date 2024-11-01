@@ -58,22 +58,22 @@ const SessionItem = memo<SessionItemProps>(({ id }) => {
   //   [group, id],
   // );
 
-  const addon = useMemo(
-    () =>
-      !showModel ? undefined : (
-        <Flexbox gap={4} horizontal style={{ flexWrap: 'wrap' }}>
-          <ModelTag model={model} />
-        </Flexbox>
-      ),
-    [showModel, model],
-  );
+  // const addon = useMemo(
+  //   () =>
+  //     !showModel ? undefined : (
+  //       <Flexbox gap={4} horizontal style={{ flexWrap: 'wrap' }}>
+  //         <ModelTag model={model} />
+  //       </Flexbox>
+  //     ),
+  //   [showModel, model],
+  // );
 
   return (
     <>
       <ListItem
         // actions={actions}
         active={active}
-        addon={addon}
+        // addon={addon}
         avatar={avatar}
         avatarBackground={avatarBackground}
         date={updateAt?.valueOf()}

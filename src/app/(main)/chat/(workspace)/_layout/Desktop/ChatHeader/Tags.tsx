@@ -25,7 +25,7 @@ const TitleTags = memo(() => {
   return (
     <Flexbox align={'center'} horizontal>
       <ModelSwitchPanel>
-        <ModelTag model={model} />
+        {/* <ModelTag model={model} /> */}
       </ModelSwitchPanel>
       {showPlugin && plugins?.length > 0 && <PluginTag plugins={plugins} />}
       {hasKnowledge && <KnowledgeTag data={enabledKnowledge} />}

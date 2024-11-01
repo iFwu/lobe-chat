@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { DESKTOP_HEADER_ICON_SIZE } from '@/const/layoutTokens';
-import { useOpenChatSettings } from '@/hooks/useInterceptingRoutes';
+// import { useOpenChatSettings } from '@/hooks/useInterceptingRoutes';
 import { useGlobalStore } from '@/store/global';
 import { systemStatusSelectors } from '@/store/global/selectors';
 import { useSessionStore } from '@/store/session';
@@ -33,7 +33,7 @@ const Main = memo(() => {
     sessionMetaSelectors.currentAgentBackgroundColor(s),
   ]);
 
-  const openChatSettings = useOpenChatSettings();
+  // const openChatSettings = useOpenChatSettings();
 
   const displayTitle = isInbox ? t('inbox.title') : title;
   const displayDesc = isInbox ? t('inbox.desc') : description;
@@ -55,12 +55,12 @@ const Main = memo(() => {
         <ActionIcon
           aria-label={t('agents')}
           icon={showSessionPanel ? PanelLeftClose : PanelLeftOpen}
-          // onClick={() => {
-          //   updateSystemStatus({
-          //     sessionsWidth: showSessionPanel ? 0 : 320,
-          //     showSessionPanel: !showSessionPanel,
-          //   });
-          // }}
+          onClick={() => {
+            updateSystemStatus({
+              sessionsWidth: showSessionPanel ? 0 : 320,
+              showSessionPanel: !showSessionPanel,
+            });
+          }}
           size={DESKTOP_HEADER_ICON_SIZE}
           title={t('agents')}
         />
@@ -68,7 +68,7 @@ const Main = memo(() => {
       <Avatar
         avatar={avatar}
         background={backgroundColor}
-        onClick={() => openChatSettings()}
+        // onClick={() => openChatSettings()}
         size={40}
         title={title}
       />

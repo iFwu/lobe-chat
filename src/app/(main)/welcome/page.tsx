@@ -7,7 +7,7 @@ import { translation } from '@/server/translation';
 import { isMobileDevice } from '@/utils/server/responsive';
 
 import Actions from './features/Actions';
-import Hero from './features/Hero';
+// import Hero from './features/Hero';
 
 export const generateMetadata = async () => {
   const { t } = await translation('metadata');
@@ -31,7 +31,7 @@ const Page = async () => {
     <>
       <StructuredData ld={ld} />
       <WelcomeLogo mobile={mobile} />
-      <Hero />
+      {/* <Hero /> */}
       <Actions mobile={mobile} />
     </>
   );

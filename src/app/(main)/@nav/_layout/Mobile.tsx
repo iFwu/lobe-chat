@@ -32,8 +32,6 @@ const Nav = memo(() => {
   const activeKey = useActiveTabKey();
   const router = useRouter();
 
-  const { showMarket } = useServerConfigStore(featureFlagsSelectors);
-
   const items: MobileTabBarProps['items'] = useMemo(
     () =>
       [
@@ -46,16 +44,6 @@ const Nav = memo(() => {
             router.push('/chat');
           },
           title: t('tab.chat'),
-        },
-        showMarket && {
-          icon: (active: boolean) => (
-            <Icon className={active ? styles.active : undefined} icon={Compass} />
-          ),
-          key: SidebarTabKey.Discover,
-          onClick: () => {
-            router.push('/discover');
-          },
-          title: t('tab.discover'),
         },
         {
           icon: (active: boolean) => (

@@ -46,17 +46,17 @@ const SessionItem = memo<SessionItemProps>(({ id }) => {
 
   const showModel = model !== defaultModel;
 
-  const actions = useMemo(
-    () => (
-      <Actions
-        group={group}
-        id={id}
-        openCreateGroupModal={() => setCreateGroupModalOpen(true)}
-        setOpen={setOpen}
-      />
-    ),
-    [group, id],
-  );
+  // const actions = useMemo(
+  //   () => (
+  //     <Actions
+  //       group={group}
+  //       id={id}
+  //       openCreateGroupModal={() => setCreateGroupModalOpen(true)}
+  //       setOpen={setOpen}
+  //     />
+  //   ),
+  //   [group, id],
+  // );
 
   const addon = useMemo(
     () =>
@@ -71,7 +71,7 @@ const SessionItem = memo<SessionItemProps>(({ id }) => {
   return (
     <>
       <ListItem
-        actions={actions}
+        // actions={actions}
         active={active}
         addon={addon}
         avatar={avatar}

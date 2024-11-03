@@ -5,6 +5,7 @@ import ServerLayout from '@/components/server/ServerLayout';
 import Desktop from './_layout/Desktop';
 import Mobile from './_layout/Mobile';
 import ComingSoon from './features/ComingSoon';
+import PetSuppliesLink from './features/PetSuppliesLink';
 import SessionHydration from './features/SessionHydration';
 import SkeletonList from './features/SkeletonList';
 
@@ -20,6 +21,7 @@ const Session = () => {
           <SessionListContent />
         </Suspense>
         <ComingSoon />
+        <PetSuppliesLink />
       </Layout>
       <SessionHydration />
     </>

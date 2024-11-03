@@ -5,7 +5,7 @@
 export const LOBE_CHAT_CLOUD = '';
 
 export const BRANDING_NAME = 'AskPetAI.COM';
-export const BRANDING_LOGO_URL = '';
+export const BRANDING_LOGO_URL = '/logo.png';
 
 export const ORG_NAME = '';
 

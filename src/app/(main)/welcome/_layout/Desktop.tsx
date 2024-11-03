@@ -16,7 +16,7 @@ const DesktopLayout = ({ children }: PropsWithChildren) => {
         height={'100%'}
         justify={'space-between'}
         padding={16}
-        style={{ overflow: 'hidden', position: 'relative', top: '-25%' }}
+        style={{ overflow: 'hidden', position: 'relative' }}
         width={'100%'}
       >
         <div />

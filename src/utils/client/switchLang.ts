@@ -1,10 +1,8 @@
 import { changeLanguage } from 'i18next';
 
-import { LocaleMode } from '@/types/locale';
-
-export const switchLang = (locale: LocaleMode) => {
-  const lang = locale === 'auto' ? navigator.language : locale;
-
+export const switchLang = () => {
+  const lang = 'en-US';  // 强制使用英文
+  
   changeLanguage(lang);
   document.documentElement.lang = lang;
 };

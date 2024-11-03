@@ -11,6 +11,8 @@ import {
 } from '@/const/layoutTokens';
 import { useGlobalStore } from '@/store/global';
 import { systemStatusSelectors } from '@/store/global/selectors';
+import { useSessionStore } from '@/store/session';
+import { sessionSelectors } from '@/store/session/selectors';
 
 import LocalFiles from './FilePreview';
 import Footer from './Footer';
@@ -24,6 +26,7 @@ const DesktopChatInput = memo(() => {
     systemStatusSelectors.inputHeight(s),
     s.updateSystemStatus,
   ]);
+  const isInbox = useSessionStore(sessionSelectors.isInboxSession);
 
   return (
     <>
@@ -43,7 +46,7 @@ const DesktopChatInput = memo(() => {
         }}
         placement="bottom"
         size={{ height: inputHeight, width: '100%' }}
-        style={{ zIndex: 10 }}
+        style={{ display: isInbox ? 'none' : 'block', zIndex: 10 }}
       >
         <Flexbox
           gap={8}

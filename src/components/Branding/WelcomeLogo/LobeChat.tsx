@@ -1,28 +1,39 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { memo } from 'react';
 import { Center } from 'react-layout-kit';
-
-const LogoThree = dynamic(() => import('@lobehub/ui/es/LogoThree'), { ssr: false });
-const LogoSpline = dynamic(() => import('@lobehub/ui/es/LogoThree/LogoSpline'), { ssr: false });
 
 const WelcomeLogo = memo<{ mobile?: boolean }>(({ mobile }) => {
   return mobile ? (
     <Center height={240} width={240}>
-      <LogoThree size={240} />
+      <Image
+        alt="logo"
+        height={240}
+        src="/logo.png"
+        width={240}
+      />
     </Center>
   ) : (
     <Center
       style={{
-        height: `min(482px, 40vw)`,
+        height: `min(600px, 40vw)`,
         marginBottom: '-10%',
-        marginTop: '-20%',
+        marginTop: '-13%',
         position: 'relative',
-        width: `min(976px, 80vw)`,
+        width: `min(600px, 40vw)`,
       }}
     >
-      <LogoSpline height={'min(482px, 40vw)'} width={'min(976px, 80vw)'} />
+      <Image
+        alt="logo"
+        height={600}
+        src="/logo.png"
+        style={{
+          height: 'min(600px, 40vw)',
+          width: 'min(600px, 40vw)',
+        }}
+        width={600}
+      />
     </Center>
   );
 });

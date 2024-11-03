@@ -92,7 +92,7 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
     case 'combine': {
       logoComponent = (
         <>
-          <Logo3d alt="AskPetAI" size={size} />
+          <Image alt="logo" height={size * 1.5} src="/logo.png" width={size * 1.5} />
           <CustomTextLogo size={size} style={{ marginLeft: Math.round(size / 4) }} />
         </>
       );

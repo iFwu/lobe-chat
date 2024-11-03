@@ -1,5 +1,6 @@
 import type { DivProps, SvgProps } from '@lobehub/ui';
 import type { LobeChatProps } from '@lobehub/ui/brand';
+import { Logo3d } from '@lobehub/ui/brand';
 import { createStyles, useTheme } from 'antd-style';
 import Image, { ImageProps } from 'next/image';
 import { ReactNode, memo } from 'react';
@@ -91,7 +92,7 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
     case 'combine': {
       logoComponent = (
         <>
-          <CustomImageLogo size={size} />
+          <Logo3d alt="AskPetAI" size={size} />
           <CustomTextLogo size={size} style={{ marginLeft: Math.round(size / 4) }} />
         </>
       );
